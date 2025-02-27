@@ -1,0 +1,44 @@
+.table {
+  width: 100%;
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  th,
+  td {
+    padding: $spacing-unit * 2;
+    text-align: left;
+  }
+
+  th {
+    font-weight: 600;
+    color: $secondary-color;
+    cursor: pointer;
+    user-select: none;
+    transition: color $transition-duration ease;
+
+    &:hover {
+      color: $text-color;
+    }
+  }
+
+  td {
+    border-top: 1px solid $border-color;
+  }
+
+  tr {
+    transition: background-color $transition-duration ease;
+
+    &:hover {
+      background-color: rgba($primary-color, 0.02);
+    }
+  }
+
+  &__sort-icon {
+    width: 16px;
+    height: 16px;
+    margin-left: $spacing-unit;
+    vertical-align: middle;
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,36 @@
+// Colors
+$primary-color: #2196f3;
+$secondary-color: #7e7e7e;
+$success-color: #4caf50;
+$warning-color: #ff9800;
+$error-color: #f44336;
+$background-color: #f5f5f5;
+$text-color: #333333;
+$icon-color: #222222;
+$border-color: #e0e0e0;
+$faintest-color: #d1d1d1;
+
+// Typography
+$font-family: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont,
+  sans-serif;
+$font-size-base: 14px;
+$font-size-large: 16px;
+$font-size-small: 12px;
+
+// Spacing
+$spacing-unit: 8px;
+$border-radius: 14px;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// Status Colors
+$status-online: #1bcd7a;
+$status-draft: #7e7e7e;
+$status-stopped: #f95555;
+$status-paused: #ff9800;
+
+// Transitions
+$transition-duration: 0.2s;

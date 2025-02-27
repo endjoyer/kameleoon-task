@@ -1,0 +1,44 @@
+.results {
+  padding: $spacing-unit * 4;
+
+  &__header {
+    margin-bottom: $spacing-unit * 4;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: $spacing-unit;
+  }
+
+  &__text {
+    color: $secondary-color;
+    font-size: $font-size-large;
+  }
+
+  &__content {
+    background: white;
+    border-radius: $border-radius;
+    padding: $spacing-unit * 3;
+  }
+
+  &__info {
+    display: grid;
+    gap: $spacing-unit * 2;
+  }
+
+  &__info-item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-unit * 2;
+  }
+
+  &__info-label {
+    color: $secondary-color;
+    min-width: 80px;
+  }
+
+  &__info-value {
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,7 @@
+.dashboard {
+  padding: $spacing-unit * 4;
+
+  @include mobile {
+    padding: $spacing-unit * 2;
+  }
+}

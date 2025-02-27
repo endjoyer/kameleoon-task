@@ -1,50 +1,107 @@
-# React + TypeScript + Vite
+# A/B Tests Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React application for managing and monitoring A/B tests with a clean, professional interface. Built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+![Dashboard Screenshot](screenshots/dashboard.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- **Test Management Dashboard**
+  - View all A/B tests in a sortable, filterable table
+  - Real-time search functionality
+  - Advanced sorting capabilities for test properties
+  - Status tracking with visual indicators
+- **Test Details**
+  - Detailed test results view
+  - Test finalization interface
+  - Site integration information
+- **User Experience**
+  - Responsive design
+  - Keyboard navigation support
+  - Clean and intuitive interface
+  - Loading states and error handling
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🛠 Tech Stack
 
-- Configure the top-level `parserOptions` property like this:
+- **Core:**
+  - React 18
+  - TypeScript
+  - Vite
+- **Routing & State:**
+  - React Router v6
+- **Styling:**
+  - SCSS
+  - BEM methodology
+- **HTTP Client:**
+  - Axios
+- **UI Components:**
+  - Lucide React (icons)
+- **Development Tools:**
+  - ESLint
+  - TypeScript ESLint
+  - Sass
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📦 Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/endjoyer/kameleoon-task.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+cd kameleoon-task npm install
 ```
+
+3. Set up and start the API server:
+   Clone and run the API server from:
+   https://development.kameleoon.net/oivanov/frontend-interview-task-api
+
+## 🔧 Configuration
+
+The application uses Vite for build configuration. Key configuration files:
+
+- `vite.config.ts` - Vite configuration
+- `tsconfig.json` - TypeScript configuration
+- `.eslintrc.json` - ESLint rules
+
+## 📁 Project Structure
+
+src/  
+├── api/ — API integration layer  
+├── components/ — Reusable UI components  
+├── hooks/ — Custom React hooks  
+├── pages/ — Route pages  
+├── styles/ — SCSS stylesheets  
+├── types/ — TypeScript type definitions  
+└── utils/ — Utility functions
+
+## 🎯 Usage
+
+- **Dashboard:** View and manage all A/B tests
+- **Search:** Filter tests by name
+- **Sorting:** Click column headers to sort
+- **Test Details:** Click "Results" to view test data
+- **Test Finalization:** Use "Finalize" for draft tests
+
+## 🔑 Key Features Implementation
+
+### Search Functionality
+
+- Real-time filtering
+- Case-insensitive search
+- Reset capability
+
+### Sorting System
+
+- Multi-column sorting
+- Custom sort for status values
+- Ascending/Descending toggle
+
+### Routing
+
+- Clean URLs with React Router
+- Persistent state between routes
+- Back navigation support

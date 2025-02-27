@@ -1,0 +1,14 @@
+.status-badge {
+  &--online {
+    color: $status-online;
+  }
+  &--paused {
+    color: $status-paused;
+  }
+  &--draft {
+    color: $status-draft;
+  }
+  &--stopped {
+    color: $status-stopped;
+  }
+}

@@ -1,22 +1,58 @@
 .loading {
-  @include flex-center;
+  display: flex;
   flex-direction: column;
-  gap: $spacing-unit * 2;
-  padding: $spacing-unit * 4;
-  color: $secondary-color;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+  gap: 1rem;
 
   &__spinner {
-    width: 40px;
-    height: 40px;
-    border: 3px solid rgba($primary-color, 0.1);
-    border-radius: 50%;
-    border-top-color: $primary-color;
-    animation: spin 1s linear infinite;
+    width: 50px;
+    height: 50px;
+    animation: rotate 2s linear infinite;
+
+    &-path {
+      stroke: $primary-color;
+      stroke-linecap: round;
+      animation: dash 1.5s ease-in-out infinite;
+    }
+  }
+
+  &__text {
+    color: $secondary-color;
+    font-size: 0.875rem;
+    animation: pulse 1.5s ease-in-out infinite;
   }
 }
 
-@keyframes spin {
-  to {
+@keyframes rotate {
+  100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
   }
 }

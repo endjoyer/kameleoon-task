@@ -11,7 +11,7 @@
 }
 
 @mixin button-base {
-  padding: $spacing-unit * 1.5 $spacing-unit * 2;
+  padding: $spacing-unit $spacing-unit * 2;
   border-radius: $border-radius;
   font-weight: 500;
   transition: all $transition-duration ease;

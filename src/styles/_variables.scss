@@ -1,5 +1,5 @@
 // Colors
-$primary-color: #2196f3;
+$primary-color: #10b981;
 $secondary-color: #7e7e7e;
 $success-color: #4caf50;
 $warning-color: #ff9800;
@@ -9,6 +9,8 @@ $text-color: #333333;
 $icon-color: #222222;
 $border-color: #e0e0e0;
 $faintest-color: #d1d1d1;
+$gray-color: #f9fafb;
+$gray-dark-color: #4b5563;
 
 // Typography
 $font-family: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont,
@@ -27,10 +29,10 @@ $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
 
 // Status Colors
-$status-online: #1bcd7a;
-$status-draft: #7e7e7e;
-$status-stopped: #f95555;
-$status-paused: #ff9800;
+$status-online: #1bda9d;
+$status-draft: #5c5c5c;
+$status-stopped: #fe4848;
+$status-paused: #ff8346;
 
 // Transitions
 $transition-duration: 0.2s;

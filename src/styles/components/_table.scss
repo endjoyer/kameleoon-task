@@ -1,36 +1,82 @@
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .table {
   width: 100%;
-  background: white;
-  border-radius: $border-radius;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  min-width: 700px;
+  border-collapse: separate;
+  border-spacing: 0 $spacing-unit;
 
   th,
   td {
     padding: $spacing-unit * 2;
     text-align: left;
+    background-color: transparent;
+
+    &:nth-child(1) {
+      min-width: 200px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+    &:nth-child(2) {
+      min-width: 120px;
+    }
+    &:nth-child(3) {
+      min-width: 100px;
+    }
+    &:nth-child(4) {
+      min-width: 150px;
+    }
+    &:nth-child(5) {
+      min-width: 130px;
+      text-align: right;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+
+    @media (max-width: 800px) {
+      padding: ($spacing-unit * 1.5) $spacing-unit;
+    }
   }
 
   th {
     font-weight: 600;
+    position: relative;
     color: $secondary-color;
     cursor: pointer;
     user-select: none;
-    transition: color $transition-duration ease;
+    transition: all $transition-duration ease;
+
+    &:first-child {
+      padding-left: $spacing-unit * 2;
+    }
+
+    &:last-child {
+      cursor: default;
+    }
 
     &:hover {
       color: $text-color;
     }
   }
 
-  td {
-    border-top: 1px solid $border-color;
-  }
-
   tr {
-    transition: background-color $transition-duration ease;
+    transition: all $transition-duration ease;
 
-    &:hover {
-      background-color: rgba($primary-color, 0.02);
+    &:hover:not(thead tr) {
+      cursor: pointer;
+      box-shadow: 0px 0px 20px 0px #00000026;
+    }
+
+    &:not(thead tr) td {
+      background-color: #ffffff;
     }
   }
 

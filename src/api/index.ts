@@ -18,7 +18,6 @@ export const getSiteById = {
   getById: (id: number) => api.get<Site>(`/sites/${id}`),
 };
 
-// Обработка ошибок
 api.interceptors.response.use(
   (response) => response,
   (error) => {

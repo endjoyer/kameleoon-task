@@ -6,6 +6,7 @@ import SearchInput from './SearchInput';
 import SortableTableHeader from './SortableTableHeader';
 import StatusBadge from './StatusBadge';
 import LoadingError from './LoadingError';
+import { SortConfig } from '@/hooks/useSort';
 
 interface DashboardTableProps {
   tests: Test[];
@@ -13,6 +14,8 @@ interface DashboardTableProps {
   loading: boolean;
   error: string | null;
   onReload: () => void;
+  sortConfig: SortConfig<Test>;
+  onSort: (key: keyof Test) => void;
 }
 
 const siteColors: Record<number, string> = {
@@ -117,65 +120,72 @@ const DashboardTable: React.FC<DashboardTableProps> = ({
           </button>
         </div>
       ) : (
-        <table className="table">
-          <thead>
-            <tr>
-              <SortableTableHeader
-                label="NAME"
-                field="name"
-                sortConfig={sortConfig}
-                onSort={handleSort}
-              />
-              <SortableTableHeader
-                label="TYPE"
-                field="type"
-                sortConfig={sortConfig}
-                onSort={handleSort}
-              />
-              <SortableTableHeader
-                label="STATUS"
-                field="status"
-                sortConfig={sortConfig}
-                onSort={handleSort}
-              />
-              <th>SITE</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredAndSortedTests.map((test) => (
-              <tr key={test.id}>
-                <td
-                  style={{ borderLeft: `4px solid ${getColor(test.siteId)}` }}
-                >
-                  {test.name}
-                </td>
-                <td>{test.type}</td>
-                <td>
-                  <StatusBadge status={test.status} />
-                </td>
-                <td>{formatUrl(sites[test.siteId] || '')}</td>
-                <td>
-                  {test.status === Status.DRAFT ? (
-                    <button
-                      onClick={() => navigate(`/finalize/${test.id}`)}
-                      className="button button--secondary"
-                    >
-                      Finalize
-                    </button>
-                  ) : (
-                    <button
-                      onClick={() => navigate(`/results/${test.id}`)}
-                      className="button button--primary"
-                    >
-                      Results
-                    </button>
-                  )}
-                </td>
+        <div className="table-container">
+          <table className="table">
+            <thead>
+              <tr>
+                <SortableTableHeader
+                  label="NAME"
+                  field="name"
+                  sortConfig={sortConfig}
+                  onSort={handleSort}
+                />
+                <SortableTableHeader
+                  label="TYPE"
+                  field="type"
+                  sortConfig={sortConfig}
+                  onSort={handleSort}
+                />
+                <SortableTableHeader
+                  label="STATUS"
+                  field="status"
+                  sortConfig={sortConfig}
+                  onSort={handleSort}
+                />
+                <SortableTableHeader
+                  label="SITE"
+                  field="siteId"
+                  sortConfig={sortConfig}
+                  onSort={handleSort}
+                />
+                <th className="column-actions">ACTIONS</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filteredAndSortedTests.map((test) => (
+                <tr key={test.id}>
+                  <td
+                    style={{ borderLeft: `4px solid ${getColor(test.siteId)}` }}
+                  >
+                    {test.name}
+                  </td>
+                  <td>{test.type}</td>
+                  <td>
+                    <StatusBadge status={test.status} />
+                  </td>
+                  <td>{formatUrl(sites[test.siteId] || '')}</td>
+                  <td>
+                    {test.status === Status.DRAFT ? (
+                      <button
+                        onClick={() => navigate(`/finalize/${test.id}`)}
+                        className="button button--secondary"
+                      >
+                        Finalize
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => navigate(`/results/${test.id}`)}
+                        className="button button--primary"
+                      >
+                        Results
+                      </button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );

@@ -4,29 +4,35 @@
   &--primary {
     background-color: $primary-color;
     color: white;
-
+    min-width: 95px;
     &:hover {
       background-color: darken($primary-color, 5%);
     }
   }
 
   &--secondary {
-    background-color: transparent;
+    min-width: 95px;
+    background-color: $gray-dark-color;
     border: 1px solid $secondary-color;
-    color: $secondary-color;
+    color: white;
 
     &:hover {
       background-color: rgba($secondary-color, 0.05);
+      color: $secondary-color;
     }
   }
 
   &--reset {
-    color: $primary-color;
-    padding: $spacing-unit;
+    color: white;
+    padding: $spacing-unit $spacing-unit * 3;
     font-weight: 500;
+    border-radius: $spacing-unit;
+    background-color: $primary-color;
+    color: white;
+    min-width: 95px;
 
     &:hover {
-      text-decoration: underline;
+      background-color: darken($primary-color, 5%);
     }
   }
 }
@@ -37,6 +43,9 @@
   gap: $spacing-unit;
   padding: $spacing-unit;
   margin-bottom: $spacing-unit * 2;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
 
   &:hover {
     color: $text-color;
